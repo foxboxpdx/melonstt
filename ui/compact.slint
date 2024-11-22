@@ -1,0 +1,71 @@
+import { VerticalBox, Button } from "std-widgets.slint";
+
+export global Logic {
+    callback send-to-osc(string);
+    callback do-recording(string);
+}
+
+export component AppWindow inherits Window {
+    title: "Melondog Speech-To-Text";
+    background: #202020;
+    default-font-size: 16px;
+    in-out property <string> stt-text;
+    in-out property <string> status-text;
+
+    GridLayout {
+        padding: 20px;
+        spacing: 10px;
+        Row {
+            Text { 
+                text: "MelonSTT Speech Transcriber.  Press a button below to begin recording."; 
+                colspan: 3; 
+                color: white; 
+            }
+        }
+        Row { Text { text: " "; }}
+        Row {
+            Button { text: "3 seconds"; clicked => { Logic.do-recording("3"); }}
+            Button { text: "6 seconds"; clicked => { Logic.do-recording("6"); }}
+            Button { text: "9 seconds"; clicked => { Logic.do-recording("9"); }}
+        }
+        Row {
+            Text { 
+                text: root.stt-text;
+                color: lightblue;
+                wrap: word-wrap;
+                width: 400px;
+                height: 100px;
+                colspan: 3;
+                vertical-alignment: center;
+            }
+        }
+        Row {
+            Button {
+                text: "Click to send";
+                colspan: 3;
+                clicked => { Logic.send-to-osc(root.stt-text); }
+            }
+        }
+        Row {
+            Text { text: ""; }
+        }
+        Row {
+            Text { 
+                text: "Status: " + root.status-text; 
+                colspan: 3; 
+                wrap: word-wrap;
+                width: 400px;
+                color: white;
+                font-size: 12px;
+                horizontal-alignment: left;
+            }
+        }
+        Row { Text { text: " "; }}
+        Row { Text { 
+            text: "MelonSTT by DF and ZB. (c)2024 Melondog Software";
+            colspan: 3;
+            color: gray;
+            font-size: 8px;
+        }}
+    }
+}
