@@ -1,6 +1,6 @@
 [package]
 name = "melonstt"
-version = "0.34.6"
+version = "0.35.1"
 authors = ["D. Fox <foxboxpdx@gmail.com>", "Z. Brunswick"]
 edition = "2021"
 build = "build.rs"
@@ -14,6 +14,8 @@ hound = "3.5.1"
 tempfile = "3.10"
 log = "0.4"
 env_logger = "0.11"
+dasp = { version = "0.11", features = ["all"]}
+winresource = "0.1.14"
 
 [dependencies.whisper-rs]
 version = "0.11.1"
@@ -28,3 +30,7 @@ slint-build = "1.5"
 
 [profile.release]
 panic = "abort"
+
+[package.metadata.winresource]
+ProductName = "Melondog Speech-to-Text Transcriber"
+LegalCopyright = "©2024 Melondog Software"

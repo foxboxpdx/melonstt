@@ -1,4 +1,3 @@
-#[allow(unused)]
 use hound;
 use whisper_rs::{FullParams, SamplingStrategy, WhisperContext, WhisperContextParameters};
 use log::{debug, error};
@@ -50,7 +49,7 @@ impl WhisperProcessor {
         // (DF) Because it's hard-coded in cpal.rs
         // (ZB) Why is it hard-coded there?
         // (DF) Because shut up >:(
-        let filename = &sample.path.path().join("rec.wav");
+        let filename = &sample.path.path().join("out.wav");
         let reader = match hound::WavReader::open(filename) {
             Ok(x) => {
                 debug!("Opened wav file ok");
