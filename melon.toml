@@ -1,0 +1,4 @@
+language = "en"
+model = "ggml-tiny.en.bin"
+osc_endpoint = "127.0.0.1:9000"
+

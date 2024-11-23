@@ -22,4 +22,4 @@ NOTE 2: I have an AMD card so I can't use CUDA but if you have it just uncomment
 ## Language Model
 Whisper.cpp uses the OpenAI Whisper PyTorch models converted to a custom `ggml` format.  You can find more information about them at [the whisper.cpp Github](https://github.com/ggerganov/whisper.cpp/blob/master/models/README.md), or can just download pre-converted models from [the whisper.cpp HuggingFace repo](https://huggingface.co/ggerganov/whisper.cpp/tree/main).  MelonSTT is currently hard-coded to look for `ggml-tiny.en.bin` in the CWD it is run from; it's not the most thorough model but it's very small and only takes about a second to process recorded audio.
 
-#### melonstt v0.35.1 (c)2024 Melondog Software (Fox & Brunswick).
+melonstt v0.35.1 23/Nov/2024
