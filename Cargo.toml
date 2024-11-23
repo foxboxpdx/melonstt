@@ -1,7 +1,7 @@
 [package]
 name = "melonstt"
-version = "0.40.0"
-authors = ["D. Fox <foxboxpdx@gmail.com>", "Z. Brunswick"]
+version = "0.43.11"
+authors = ["D. Fox", "Z. Brunswick"]
 edition = "2021"
 build = "build.rs"
 
@@ -15,7 +15,6 @@ tempfile = "3.10"
 log = "0.4"
 env_logger = "0.11"
 dasp = { version = "0.11", features = ["all"]}
-winresource = "0.1.14"
 toml = "0.8.19"
 serde = "1.0"
 serde_derive = "1.0"
@@ -31,6 +30,7 @@ features = ["full"]
 
 [build-dependencies]
 slint-build = "1.5"
+winresource = "0.1.14"
 
 [profile.release]
 panic = "abort"

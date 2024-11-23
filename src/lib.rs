@@ -27,8 +27,7 @@ pub struct STTConfig {
     pub language: String,
     /// Filename of the whisper language model to use for transcription
     pub model: String,
-    /// Optional ip:port for the OSC endpoint in case for some godforsaken
-    /// reason this isn't being run on the same machine VRChat is
+    /// Optional ip:port for the OSC endpoint (defaults to 127.0.0.1:9000)
     pub osc_endpoint: Option<String>,
 }
 
@@ -145,6 +144,7 @@ impl MelonSTT {
                 return Err(e.into());
             }
         }
+        // Send back the transcription
         Ok(self.processor.processed_text.to_string())
     }
 
