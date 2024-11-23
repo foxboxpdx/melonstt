@@ -24,9 +24,9 @@ export component AppWindow inherits Window {
         }
         Row { Text { text: " "; }}
         Row {
-            Button { text: "3 seconds"; clicked => { Logic.do-recording("3"); }}
-            Button { text: "6 seconds"; clicked => { Logic.do-recording("6"); }}
-            Button { text: "9 seconds"; clicked => { Logic.do-recording("9"); }}
+            Button { text: "tenpo 3"; clicked => { Logic.do-recording("3"); }}
+            Button { text: "tenpo 6"; clicked => { Logic.do-recording("6"); }}
+            Button { text: "tenpo 9"; clicked => { Logic.do-recording("9"); }}
         }
         Row {
             Text { 
@@ -41,7 +41,7 @@ export component AppWindow inherits Window {
         }
         Row {
             Button {
-                text: "Click to send";
+                text: "o kepeken tawa pana.";
                 colspan: 3;
                 clicked => { Logic.send-to-osc(root.stt-text); }
             }
@@ -51,7 +51,7 @@ export component AppWindow inherits Window {
         }
         Row {
             Text { 
-                text: "Status: " + root.status-text; 
+                text: "sona: " + root.status-text; 
                 colspan: 3; 
                 wrap: word-wrap;
                 width: 400px;
@@ -62,7 +62,7 @@ export component AppWindow inherits Window {
         }
         Row { Text { text: " "; }}
         Row { Text { 
-            text: "MelonSTT tan Jawa en Sepi. (c)2024 kulupu Melondog Software";
+            text: "MelonSTT tan mama Jawakun en kijetesantakalu Sepikun.";
             colspan: 3;
             color: gray;
             font-size: 8px;
